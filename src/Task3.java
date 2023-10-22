@@ -21,9 +21,7 @@ public class Task3 {
 
             double root = b * b - 4 * a * c;
 
-            System.out.println("Calculating the roots...");
-
-            switch (getNumberOfRoots(root)) {
+            switch (getroot(root)) {
                 case 0:
                     System.out.println("No real roots exist.");
                     break;
@@ -32,9 +30,9 @@ public class Task3 {
                     System.out.printf("The root is x1 = %.2f\n", x1);
                     break;
                 case 2:
-                    double x1_2 = (-b + Math.sqrt(root)) / (2 * a);
+                    double x = (-b + Math.sqrt(root)) / (2 * a);
                     double x2 = (-b - Math.sqrt(root)) / (2 * a);
-                    System.out.printf("The roots are x1 = %.2f and x2 = %.2f\n", x1_2, x2);
+                    System.out.printf("The roots are x1 = %.2f and x2 = %.2f\n", x, x2);
                     break;
             }
         }
@@ -42,13 +40,13 @@ public class Task3 {
         sc.close();
     }
 
-    private static int getNumberOfRoots(double discriminant) {
-        if (discriminant > 0) {
-            return 2; // Two real roots
-        } else if (discriminant == 0) {
-            return 1; // One real root
+    private static int getroot(double rootresult) {
+        if (rootresult > 0) {
+            return 2; // Two answer
+        } else if (rootresult == 0) {
+            return 1; // One answer
         } else {
-            return 0; // No real roots
+            return 0; // No answer
         }
     }
 }
